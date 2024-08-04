@@ -1,17 +1,16 @@
-import 'package:final_hackathon/ViewModels/Login_Controller.dart';
-import 'package:final_hackathon/Views/auth/SignupScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../ViewModels/Password_Controller.dart';
+import '../../ViewModels/Signup_Controller.dart';
+import 'LoginScreen.dart';
 
-class Loginscreen extends StatelessWidget {
-  const Loginscreen({super.key});
+class Signupscreen extends StatelessWidget {
+  const Signupscreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    LoginController controller = Get.put(LoginController());
-
+    final SignupController controller = Get.put(SignupController());
     final PasswordController passwordcontroller = Get.put(PasswordController());
     return Scaffold(
       backgroundColor: const Color(0xff0B1225),
@@ -20,7 +19,7 @@ class Loginscreen extends StatelessWidget {
           children: [
             Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 80),
+                padding: const EdgeInsets.only(top: 70),
                 child: Image.asset('assets/images/logo (1).png'),
               ),
             ),
@@ -37,7 +36,7 @@ class Loginscreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.55,
+                height: MediaQuery.of(context).size.height * 0.60,
                 width: MediaQuery.of(context).size.width * 0.8,
                 decoration: BoxDecoration(
                   color: const Color(0xff1D102D),
@@ -48,7 +47,7 @@ class Loginscreen extends StatelessWidget {
                     const Padding(
                       padding: EdgeInsets.only(top: 15),
                       child: Text(
-                        'Login',
+                        'Signup',
                         style: const TextStyle(
                             fontSize: 25,
                             color: Colors.white,
@@ -59,6 +58,29 @@ class Loginscreen extends StatelessWidget {
                       key: controller.formKey,
                       child: Column(
                         children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                                top: 10, right: 15, left: 15),
+                            child: TextFormField(
+                              controller: controller.nameController.value,
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(20)),
+                                focusedBorder: const OutlineInputBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(20))),
+                                hintText: 'Enter Your Name',
+                                hintStyle: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w400),
+                                prefixIcon: const Icon(
+                                  Icons.person_2_outlined,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              validator: controller.validateName,
+                            ),
+                          ),
                           Padding(
                             padding: const EdgeInsets.only(
                                 top: 10, right: 15, left: 15),
@@ -138,7 +160,7 @@ class Loginscreen extends StatelessWidget {
                       ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 25),
+                      padding: const EdgeInsets.only(top: 15),
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white54,
@@ -151,12 +173,12 @@ class Loginscreen extends StatelessWidget {
                             if (controller.formKey.currentState!.validate()) {}
                           },
                           child: const Text(
-                            'Login',
+                            'Signup',
                             style: TextStyle(color: Colors.white),
                           )),
                     ),
                     const Padding(
-                      padding: EdgeInsets.only(top: 10),
+                      padding: EdgeInsets.only(top: 5),
                       child: Text(
                         'Or',
                         style:
@@ -164,7 +186,7 @@ class Loginscreen extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 20),
+                      padding: const EdgeInsets.only(top: 10),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -180,7 +202,7 @@ class Loginscreen extends StatelessWidget {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(top: 20),
+              padding: EdgeInsets.only(top: 15),
               child: Text(
                 'Don’t have an account?',
                 style: TextStyle(
@@ -190,13 +212,13 @@ class Loginscreen extends StatelessWidget {
               ),
             ),
             Padding(
-                padding: const EdgeInsets.only(top: 15),
+                padding: const EdgeInsets.only(top: 10),
                 child: TextButton(
                     onPressed: () {
-                      Get.to(Signupscreen());
+                      Get.to(const Loginscreen());
                     },
                     child: const Text(
-                      'REGISTER',
+                      'SIGNUP',
                       style: TextStyle(
                           fontSize: 17,
                           color: Colors.white,
