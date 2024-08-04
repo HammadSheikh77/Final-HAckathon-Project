@@ -1,4 +1,5 @@
 import 'package:final_hackathon/Widgets/CardWidget.dart';
+import 'package:final_hackathon/Widgets/DiscountWidget.dart';
 import 'package:flutter/material.dart';
 
 class Homescreen extends StatelessWidget {
@@ -69,15 +70,16 @@ class Homescreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: const Row(
+              const Padding(
+                padding: EdgeInsets.only(top: 10),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
                       padding: EdgeInsets.only(left: 15),
                       child: Cardwidget(
-                          image: 'assets/images/burger 1.png', heading: 'Burger'),
+                          image: 'assets/images/burger 1.png',
+                          heading: 'Burger'),
                     ),
                     Cardwidget(
                         image: 'assets/images/cake 1.png', heading: 'Dessert'),
@@ -90,6 +92,34 @@ class Homescreen extends StatelessWidget {
                           heading: 'Sushi'),
                     )
                   ],
+                ),
+              ),
+              const SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 15),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 10),
+                        child: Discountwidget(
+                            heading: '30% OFF',
+                            image: 'assets/images/Pasta.png'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(left: 10, right: 10),
+                        child: Discountwidget(
+                            heading: '30% OFF',
+                            image: 'assets/images/Pasta.png'),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(right: 10),
+                        child: Discountwidget(
+                            heading: '30% OFF',
+                            image: 'assets/images/Pasta.png'),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
