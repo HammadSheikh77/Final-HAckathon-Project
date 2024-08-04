@@ -1,4 +1,5 @@
 import 'package:final_hackathon/ViewModels/Login_Controller.dart';
+import 'package:final_hackathon/Views/HomeView/HomeScreen.dart';
 import 'package:final_hackathon/Views/auth/SignupScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -149,6 +150,7 @@ class Loginscreen extends StatelessWidget {
                           ),
                           onPressed: () {
                             if (controller.formKey.currentState!.validate()) {}
+                            Get.to(Homescreen());
                           },
                           child: const Text(
                             'Login',

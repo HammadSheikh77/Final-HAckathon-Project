@@ -1,3 +1,4 @@
+import 'package:final_hackathon/Views/HomeView/HomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -19,7 +20,7 @@ class Signupscreen extends StatelessWidget {
           children: [
             Center(
               child: Padding(
-                padding: const EdgeInsets.only(top: 70),
+                padding: const EdgeInsets.only(top: 80),
                 child: Image.asset('assets/images/logo (1).png'),
               ),
             ),
@@ -36,7 +37,7 @@ class Signupscreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 20),
               child: Container(
-                height: MediaQuery.of(context).size.height * 0.60,
+                height: MediaQuery.of(context).size.height * 0.55,
                 width: MediaQuery.of(context).size.width * 0.8,
                 decoration: BoxDecoration(
                   color: const Color(0xff1D102D),
@@ -60,7 +61,7 @@ class Signupscreen extends StatelessWidget {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(
-                                top: 10, right: 15, left: 15),
+                                top: 15, right: 15, left: 15),
                             child: TextFormField(
                               controller: controller.nameController.value,
                               decoration: InputDecoration(
@@ -147,20 +148,8 @@ class Signupscreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(top: 5, right: 10),
-                          child: const Text(
-                            'Forget Password?',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      ],
-                    ),
                     Padding(
-                      padding: const EdgeInsets.only(top: 15),
+                      padding: const EdgeInsets.only(top: 25),
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white54,
@@ -171,31 +160,12 @@ class Signupscreen extends StatelessWidget {
                           ),
                           onPressed: () {
                             if (controller.formKey.currentState!.validate()) {}
+                            Get.to(Homescreen());
                           },
                           child: const Text(
                             'Signup',
                             style: TextStyle(color: Colors.white),
                           )),
-                    ),
-                    const Padding(
-                      padding: EdgeInsets.only(top: 5),
-                      child: Text(
-                        'Or',
-                        style:
-                            TextStyle(fontSize: 12, color: Color(0xffEC2578)),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 10),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset('assets/icons/google-icon 1.png'),
-                          SizedBox(
-                              width: MediaQuery.of(context).size.width * 0.03),
-                          Image.asset('assets/icons/facebook-3 1.png'),
-                        ],
-                      ),
                     ),
                   ],
                 ),
@@ -204,7 +174,7 @@ class Signupscreen extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.only(top: 15),
               child: Text(
-                'Don’t have an account?',
+                'Already have an account?',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 14,
