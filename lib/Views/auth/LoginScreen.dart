@@ -7,7 +7,13 @@ class Loginscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        
+        children: [
+          Stack(
+            children: [
+              Image.asset('assets/images/Background.png'),
+            ],
+          ),
+        ],
       ),
     );
   }
