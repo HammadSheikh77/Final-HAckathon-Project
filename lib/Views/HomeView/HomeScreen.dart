@@ -18,111 +18,137 @@ class Homescreen extends StatelessWidget {
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 35, left: 30),
-                    child: Image.asset('assets/icons/􀌇.png'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 35, right: 40),
-                    child: Image.asset('assets/images/Content.png'),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 35, right: 20),
-                    child: Image.asset('assets/icons/Segmented Control.png'),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Center(child: Image.asset('assets/images/Frame 11.png')),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(top: 10),
-                child: Row(
+          SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding: EdgeInsets.only(left: 24),
-                      child: Text(
-                        'Categories',
-                        style: TextStyle(
-                            fontSize: 17,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
+                      padding: const EdgeInsets.only(top: 35, left: 30),
+                      child: Image.asset('assets/icons/􀌇.png'),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(right: 24),
-                      child: Text(
-                        'See all',
-                        style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            color: Colors.white),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(top: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.only(left: 15),
-                      child: Cardwidget(
-                          image: 'assets/images/burger 1.png',
-                          heading: 'Burger'),
+                      padding: const EdgeInsets.only(top: 35, right: 40),
+                      child: Image.asset('assets/images/Content.png'),
                     ),
-                    Cardwidget(
-                        image: 'assets/images/cake 1.png', heading: 'Dessert'),
-                    Cardwidget(
-                        image: 'assets/images/taco 1.png', heading: 'Mexican'),
                     Padding(
-                      padding: EdgeInsets.only(right: 15),
-                      child: Cardwidget(
-                          image: 'assets/images/3D Food Icon by @OdafeUI.png',
-                          heading: 'Sushi'),
-                    )
+                      padding: const EdgeInsets.only(top: 35, right: 20),
+                      child: Image.asset('assets/icons/Segmented Control.png'),
+                    ),
                   ],
                 ),
-              ),
-              const SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Padding(
-                  padding: EdgeInsets.only(top: 15),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Center(child: Image.asset('assets/images/Frame 11.png')),
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(top: 10),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(left: 10),
-                        child: Discountwidget(
-                            heading: '30% OFF',
-                            image: 'assets/images/Pasta.png'),
+                        padding: EdgeInsets.only(left: 24),
+                        child: Text(
+                          'Categories',
+                          style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                        ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(left: 10, right: 10),
-                        child: Discountwidget(
-                            heading: '30% OFF',
-                            image: 'assets/images/Pasta.png'),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(right: 10),
-                        child: Discountwidget(
-                            heading: '30% OFF',
-                            image: 'assets/images/Pasta.png'),
-                      ),
+                        padding: EdgeInsets.only(right: 24),
+                        child: Text(
+                          'See all',
+                          style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              color: Colors.white),
+                        ),
+                      )
                     ],
                   ),
                 ),
-              ),
-            ],
+                const Padding(
+                  padding: EdgeInsets.only(top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.only(left: 15),
+                        child: Cardwidget(
+                            image: 'assets/images/burger 1.png',
+                            heading: 'Burger'),
+                      ),
+                      Cardwidget(
+                          image: 'assets/images/cake 1.png', heading: 'Dessert'),
+                      Cardwidget(
+                          image: 'assets/images/taco 1.png', heading: 'Mexican'),
+                      Padding(
+                        padding: EdgeInsets.only(right: 15),
+                        child: Cardwidget(
+                            image: 'assets/images/3D Food Icon by @OdafeUI.png',
+                            heading: 'Sushi'),
+                      )
+                    ],
+                  ),
+                ),
+                const SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 15),
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(left: 10),
+                          child: Discountwidget(
+                              heading: '30% OFF',
+                              image: 'assets/images/Pasta.png'),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 10, right: 10),
+                          child: Discountwidget(
+                              heading: '30% OFF',
+                              image: 'assets/images/Pasta.png'),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Discountwidget(
+                              heading: '30% OFF',
+                              image: 'assets/images/Pasta.png'),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, top: 20),
+                  child: Text(
+                    'Fastest near you',
+                    style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                ),
+                Center(child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Image.asset('assets/images/Card.png'),
+                )),
+                
+                Center(child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Image.asset('assets/images/Card.png'),
+                )),
+                
+                Center(child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Image.asset('assets/images/Card.png'),
+                )),
+              ],
+            ),
           ),
         ],
       ),
