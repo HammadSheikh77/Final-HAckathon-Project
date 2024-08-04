@@ -64,6 +64,7 @@ class Loginscreen extends StatelessWidget {
                             padding: const EdgeInsets.only(
                                 top: 10, right: 15, left: 15),
                             child: TextFormField(
+                              style: TextStyle(color: Colors.white),
                               controller: controller.emailController,
                               decoration: InputDecoration(
                                   border: OutlineInputBorder(
@@ -91,6 +92,7 @@ class Loginscreen extends StatelessWidget {
                               padding: const EdgeInsets.only(
                                   top: 15, left: 15, right: 15),
                               child: TextFormField(
+                                style: TextStyle(color: Colors.white),
                                 controller: controller.passwordController,
                                 obscureText:
                                     passwordcontroller.isPasswordHidden.value,
