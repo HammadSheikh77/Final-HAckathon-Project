@@ -1,6 +1,8 @@
+import 'package:final_hackathon/Views/HomeView/CardScreen.dart';
 import 'package:final_hackathon/Widgets/CardWidget.dart';
 import 'package:final_hackathon/Widgets/DiscountWidget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class Homescreen extends StatelessWidget {
   const Homescreen({super.key});
@@ -41,7 +43,8 @@ class Homescreen extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 20),
-                  child: Center(child: Image.asset('assets/images/Frame 11.png')),
+                  child:
+                      Center(child: Image.asset('assets/images/Frame 11.png')),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(top: 10),
@@ -83,9 +86,11 @@ class Homescreen extends StatelessWidget {
                             heading: 'Burger'),
                       ),
                       Cardwidget(
-                          image: 'assets/images/cake 1.png', heading: 'Dessert'),
+                          image: 'assets/images/cake 1.png',
+                          heading: 'Dessert'),
                       Cardwidget(
-                          image: 'assets/images/taco 1.png', heading: 'Mexican'),
+                          image: 'assets/images/taco 1.png',
+                          heading: 'Mexican'),
                       Padding(
                         padding: EdgeInsets.only(right: 15),
                         child: Cardwidget(
@@ -123,8 +128,8 @@ class Homescreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 20),
+                const Padding(
+                  padding: EdgeInsets.only(left: 20, top: 20),
                   child: Text(
                     'Fastest near you',
                     style: TextStyle(
@@ -133,17 +138,22 @@ class Homescreen extends StatelessWidget {
                         color: Colors.white),
                   ),
                 ),
-                Center(child: Padding(
+                Center(
+                    child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: InkWell(
+                      onTap: () {
+                        Get.to(Cardscreen());
+                      },
+                      child: Image.asset('assets/images/Card.png')),
+                )),
+                Center(
+                    child: Padding(
                   padding: const EdgeInsets.only(top: 20),
                   child: Image.asset('assets/images/Card.png'),
                 )),
-                
-                Center(child: Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: Image.asset('assets/images/Card.png'),
-                )),
-                
-                Center(child: Padding(
+                Center(
+                    child: Padding(
                   padding: const EdgeInsets.only(top: 20),
                   child: Image.asset('assets/images/Card.png'),
                 )),
